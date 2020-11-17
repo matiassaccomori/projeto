@@ -1,5 +1,5 @@
 <?php 
-include('verifica_login.php');
+include "verifica_login.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -33,6 +33,7 @@ $linha = mysqli_fetch_assoc($dados);
 
 $disp_viagens = $linha['disp_viagens'];
 $disp_mudancas = $linha['disp_mudancas'];
+$curriculo = $linha['curriculo'];
 
 ?>
 
@@ -42,7 +43,7 @@ $disp_mudancas = $linha['disp_mudancas'];
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
 			<a class="navbar-brand">
-				<img class="logo" src="img/logot.png">
+			<img style="width: 220px;" src="img/logo_sas_white.png">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -278,8 +279,18 @@ $disp_mudancas = $linha['disp_mudancas'];
 
 			<!-- FIM Informações complementares -->
 
+			<a href="<?php echo"pdf/$curriculo" ?>" class="btn btn-outline-success" target="_blank">
+			<svg width="20px" height="20px" viewBox="0 0 16 16" class="bi bi-file-earmark-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  		<path fill-rule="evenodd" d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0H4zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3z"/>
+			</svg> Visualizar Curriculo em PDF</a>
+
 		</form>
-		<a href="pesquisa.php" class="btn btn-primary">Voltar para o início</a>
+		<br>
+		<a href="pesquisa.php" class="btn btn-outline-primary">
+		<svg width="22px" height="22px" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  	<path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+  	<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+		</svg> Voltar para o início</a>
 	</div>
 </div>
 </div>
